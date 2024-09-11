@@ -15,8 +15,8 @@ jobs:
 
     - name: Set Up Git
       run: |
-        git config --global user.name "Your Name"
-        git config --global user.email "you@example.com"
+        git config --global user.name "Supremeyyds"
+        git config --global user.email "supremeyyds@gmail.com"
 
     - name: Run Update Script
       run: |
@@ -27,7 +27,7 @@ jobs:
       env:
         TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
       run: |
-        git remote set-url origin https://$TOKEN@github.com/YourUsername/YourRepoName.git
+        git remote set-url origin https://$TOKEN@github.com/Supremeyyds/op-repos.git
         git add .
         git commit -m "Auto-update repositories"
         git push
