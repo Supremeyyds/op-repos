@@ -4,16 +4,21 @@
 # 删除已有的上游 repo 目录
 rm -rf openwrt-passwall2
 rm -rf openwrt-passwall-packages
+rm -rf luci-app-ddns-go
+rm -rf luci-app-wechatpush
+rm -rf luci-theme-argon
+rm -rf luci-app-argon-config
 rm -rf luci-app-adguardhome
-rm -rf luci-app-alist
-rm -rf luci-app-clash
+
 
 # 克隆上游仓库
 git clone https://github.com/xiaorouji/openwrt-passwall2.git
 git clone https://github.com/xiaorouji/openwrt-passwall-packages.git
+git clone https://github.com/sirpdboy/luci-app-ddns-go.git
+git clone -b openwrt-18.06 https://github.com/tty228/luci-app-wechatpush.git
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git
+git clone -b 18.06 https://github.com/jerrykuku/luci-app-argon-config.git
 git clone https://github.com/DHDAXCW/dhdaxcw-app.git
-git clone https://github.com/someone/luci-app-alist.git
-git clone https://github.com/someone/luci-app-clash.git
 
 # 获取 luci-app-adguardhome
 cd dhdaxcw-app
