@@ -2,8 +2,8 @@ name: Update Repositories
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # 每天午夜执行一次（你可以根据需求修改时间）
-  workflow_dispatch:  # 允许手动触发工作流
+    - cron: '0 0 * * *'  # 每天午夜执行一次
+  workflow_dispatch:
 
 jobs:
   update:
@@ -23,8 +23,11 @@ jobs:
         chmod +x update_repos.sh
         ./update_repos.sh
 
-    - name: Commit changes
+    - name: Push changes
+      env:
+        TOKEN: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
       run: |
+        git remote set-url origin https://$TOKEN@github.com/YourUsername/YourRepoName.git
         git add .
         git commit -m "Auto-update repositories"
         git push
